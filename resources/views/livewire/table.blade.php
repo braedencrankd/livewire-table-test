@@ -19,17 +19,6 @@
 		</th>
 	</tr>
 	@foreach ($movies as $key => $movie)
-		<tr wire:key="{{ $movie->id }}">
-			<td>{{ $movie->id }}</td>
-			<td>
-				<input type="text"
-					wire:model="movies.{{ $key }}.title">
-			</td>
-			<td>{{ $movie->director }}</td>
-			<td>{{ $movie->year }}</td>
-			<td>{{ $movie->genre }}</td>
-			<td>{{ $movie->created_at }}</td>
-			<td>{{ $movie->updated_at }}</td>
-		</tr>
+		<livewire:table-item movieId="{{ $movie->id }}" />
 	@endforeach
 </table>
